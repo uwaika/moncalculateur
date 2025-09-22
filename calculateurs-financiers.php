@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Calculateurs Financiers Pro
  * Description: Suite de calculateurs financiers modulaires et personnalisables
- * Version: 3.0.0
+ * Version: 3.0.1
  * Author: Votre Nom
  * Text Domain: calculateurs-financiers
  */
