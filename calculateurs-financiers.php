@@ -3,6 +3,7 @@
  * Plugin Name: Calculateurs Financiers Pro
  * Description: Suite de calculateurs financiers modulaires et personnalisables
  * Version: 3.0.1
+ * GitHub Plugin URI: uwaika/moncalculateur
  * Author: Votre Nom
  * Text Domain: calculateurs-financiers
  */
