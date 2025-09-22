@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Calculateurs Financiers Pro
- * Description: Suite de calculateurs financiers modulaires et personnalisables
- * Version: 3.0.1
- * GitHub Plugin URI: uwaika/moncalculateur
+ * Plugin Name: Calculateurs Financiers
+ * Description: Une collection de calculateurs financiers pour votre site WordPress
+ * Version: 1.0.2
  * Author: Votre Nom
- * Text Domain: calculateurs-financiers
+ * License: GPL v2 or later
  */
+
 
 // Sécurité : Empêcher l'accès direct
 if (!defined('ABSPATH')) {
