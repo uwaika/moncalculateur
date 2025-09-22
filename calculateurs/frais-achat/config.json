@@ -1,0 +1,186 @@
+{
+  "id": "frais-achat",
+  "name": "Frais d'achat immobilier",
+  "shortcode": "frais_achat_immobilier",
+  "version": "2.0.0",
+  "description": "Calcul des frais de notaire et du budget global pour un achat immobilier",
+  "author": "CF Pro",
+  "category": "immobilier",
+  "icon": "dashicons-admin-home",
+  "parameters": {
+    "notaire_neuf_taux": {
+      "default": 2.5,
+      "type": "float",
+      "label": "Taux de frais de notaire pour le neuf (%)",
+      "help": "Pourcentage appliqué pour les biens neufs",
+      "editable": true,
+      "min": 0,
+      "max": 10
+    },
+    "droits_mutation_base": {
+      "default": 4.50,
+      "type": "float",
+      "label": "Taux de base des droits de mutation (%)",
+      "help": "Taux standard avant hausse 2025",
+      "editable": true,
+      "min": 0,
+      "max": 10
+    },
+    "hausse_dmto_2025": {
+      "default": 0.50,
+      "type": "float",
+      "label": "Hausse DMTO 2025 (points)",
+      "help": "Points supplémentaires pour les départements ayant voté la hausse",
+      "editable": true,
+      "min": 0,
+      "max": 2
+    },
+    "taxe_communale": {
+      "default": 1.20,
+      "type": "float",
+      "label": "Taxe communale (%)",
+      "editable": true,
+      "min": 0,
+      "max": 5
+    },
+    "frais_assiette": {
+      "default": 2.37,
+      "type": "float",
+      "label": "Frais d'assiette et recouvrement (%)",
+      "help": "Pourcentage des frais d'assiette sur les DMTO",
+      "editable": true,
+      "min": 0,
+      "max": 5
+    },
+    "emoluments_bareme": {
+      "default": [
+        {"min": 0, "max": 6500, "taux": 3.945},
+        {"min": 6500, "max": 17000, "taux": 1.627},
+        {"min": 17000, "max": 60000, "taux": 1.085},
+        {"min": 60000, "max": null, "taux": 0.814}
+      ],
+      "type": "array",
+      "label": "Barème des émoluments du notaire",
+      "help": "Tranches et taux pour le calcul des émoluments",
+      "editable": true
+    },
+    "frais_divers": {
+      "default": 800,
+      "type": "number",
+      "label": "Frais divers et débours (€)",
+      "help": "Montant forfaitaire des frais annexes",
+      "editable": true,
+      "min": 0,
+      "max": 5000
+    },
+    "tva_emoluments": {
+      "default": 20,
+      "type": "float",
+      "label": "TVA sur les émoluments (%)",
+      "editable": true,
+      "min": 0,
+      "max": 25
+    },
+    "contribution_securite": {
+      "default": 0.10,
+      "type": "float",
+      "label": "Contribution de sécurité immobilière (%)",
+      "help": "CSI avec minimum de 15€",
+      "editable": true,
+      "min": 0,
+      "max": 1
+    }
+  },
+  "fields": [
+    {
+      "id": "budget",
+      "type": "number",
+      "label": "Votre budget global",
+      "required": true,
+      "default": 0,
+      "min": 0,
+      "step": 1000,
+      "suffix": "€"
+    },
+    {
+      "id": "departement",
+      "type": "select",
+      "label": "Département du bien",
+      "required": true,
+      "options": "departements_list",
+      "placeholder": "-- Sélectionnez un département --"
+    },
+    {
+      "id": "type_achat",
+      "type": "radio",
+      "label": "Type d'achat",
+      "required": true,
+      "default": "neuf",
+      "options": {
+        "neuf": "Neuf",
+        "ancien": "Ancien"
+      }
+    },
+    {
+      "id": "primo_accedant",
+      "type": "radio",
+      "label": "Êtes-vous primo-accédant ?",
+      "required": true,
+      "default": "non",
+      "options": {
+        "non": "Non",
+        "oui": "Oui (résidence principale)"
+      },
+      "help": "Les primo-accédants sont exemptés de la hausse 2025"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "frais_notaire",
+      "label": "Frais de notaire estimés",
+      "type": "currency",
+      "highlighted": true
+    },
+    {
+      "id": "montant_max",
+      "label": "Montant maximum de votre investissement immobilier",
+      "type": "currency",
+      "highlighted": true
+    }
+  ],
+  "details": [
+    {
+      "id": "droits_mutation",
+      "label": "Droits de mutation (DMTO)",
+      "type": "currency"
+    },
+    {
+      "id": "emoluments",
+      "label": "Émoluments du notaire",
+      "type": "currency"
+    },
+    {
+      "id": "tva",
+      "label": "TVA sur émoluments",
+      "type": "currency"
+    },
+    {
+      "id": "csi",
+      "label": "Contribution sécurité immobilière",
+      "type": "currency"
+    },
+    {
+      "id": "frais_divers",
+      "label": "Frais divers et débours",
+      "type": "currency"
+    }
+  ],
+  "dependencies": {
+    "jquery": true,
+    "departements_data": true
+  },
+  "scripts": ["script.js"],
+  "styles": ["style.css"],
+  "templates": ["template.php"],
+  "calculator_class": "CF_Calculator_Frais_Achat"
+}

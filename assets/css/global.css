@@ -1,0 +1,341 @@
+﻿/* global.css - Styles globaux pour les calculateurs */
+
+/* Container principal */
+.cf-calculator {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.cf-calculator-wrapper {
+    margin: 20px 0;
+}
+
+.cf-calculator-container {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cf-calculator h3 {
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 10px;
+}
+
+/* Groupes de formulaire */
+.cf-form-group {
+    margin-bottom: 20px;
+}
+
+.cf-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Inputs */
+.cf-input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cf-input {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.cf-input:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.cf-currency {
+    position: absolute;
+    right: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Select */
+.cf-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background: white;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.cf-select:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Radio buttons */
+.cf-radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.cf-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cf-radio input[type="radio"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.cf-radio span {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Info boxes */
+.cf-dept-info {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #e8f4fd;
+    border-left: 3px solid #1e3a8a;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #333;
+}
+
+.cf-dept-info.cf-hausse-warning {
+    background: #fff8e6;
+    border-left-color: #f59e0b;
+}
+
+.cf-primo-info {
+    margin-top: 10px;
+}
+
+.cf-info-message {
+    padding: 10px 12px;
+    background: #dcfce7;
+    border-left: 3px solid #22c55e;
+    border-radius: 4px;
+    color: #166534;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Résultats */
+.cf-result-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.cf-result-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.cf-result {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+/* Bouton calculer */
+.cf-calculate-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.cf-calculate-btn:hover {
+    background: #1e3a8a;
+    opacity: 0.9;
+}
+
+.cf-calculate-btn:active {
+    transform: translateY(1px);
+}
+
+/* Section détails */
+.cf-details {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #1e3a8a;
+}
+
+.cf-details h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cf-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cf-details-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cf-details-table td {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.cf-details-table td:first-child {
+    color: #666;
+}
+
+.cf-details-table td:last-child {
+    text-align: right;
+    font-weight: 500;
+    color: #333;
+}
+
+.cf-total-row {
+    border-top: 2px solid #1e3a8a;
+    border-bottom: none !important;
+}
+
+.cf-total-row td {
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+/* Info taux */
+.cf-taux-info {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f0f9ff;
+    border-radius: 4px;
+    border: 1px solid #bfdbfe;
+}
+
+.cf-taux-info p {
+    margin-top: 0;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.cf-taux-info ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.cf-taux-info li {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.cf-taux-info li span {
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+/* Thèmes */
+.cf-calculator-wrapper[data-theme="dark"] .cf-calculator-container {
+    background: #1f2937;
+    color: #f9fafb;
+    border-color: #374151;
+}
+
+.cf-calculator-wrapper[data-theme="dark"] .cf-input,
+.cf-calculator-wrapper[data-theme="dark"] .cf-select {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+.cf-calculator-wrapper[data-theme="minimal"] .cf-calculator-container {
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+}
+
+/* Messages d'erreur */
+.cf-error {
+    background: #fee;
+    color: #c00;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border-left: 4px solid #c00;
+}
+
+/* Animation de chargement */
+.cf-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1e3a8a;
+    border-radius: 50%;
+    animation: cf-spin 1s linear infinite;
+}
+
+@keyframes cf-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cf-calculator-container {
+        padding: 20px;
+    }
+    
+    .cf-calculator h3 {
+        font-size: 16px;
+    }
+    
+    .cf-result {
+        font-size: 20px;
+    }
+    
+    .cf-radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .cf-select {
+        font-size: 14px;
+    }
+}
